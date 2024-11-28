@@ -1,0 +1,166 @@
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String username = "masRendra";
+    String password = "m4l4n9";
+    String uname,pwd;
+    
+    System.out.print("Masukkan username: ");
+    uname = scanner.nextLine();
+    System.out.print("Masukkan password: ");
+    pwd = scanner.nextLine();
+    
+    if (uname.equals(username) && pwd.equals(password)){
+        System.out.println("Anda Berhasil login kedalam sistem!");
+    } else {
+        System.out.println("Login gagal!");
+        return;
+    }
+    System.out.println("");
+    System.out.println("................................................................................");
+    System.out.println("----------------------------------DASHBOARD-------------------------------------");
+
+    System.out.println("");
+    System.out.println("Kemana tujuan anda selanjutnya untuk berbisnis: ");
+    System.out.println("1. Maladewa ");
+    System.out.println("2. Dubai ");
+    System.out.println("3. Peru ");
+    System.out.println("4. Roma ");
+    System.out.println("5. Buenos Aires ");
+    System.out.print("Pilihan anda (1/2/3/4/5): ");
+    int tujuanInput = scanner.nextInt();
+    String tujuan = "";
+    
+    switch (tujuanInput) {
+        case 1: 
+          tujuan = "Maladewa";
+          break;
+        case 2: 
+          tujuan = "Dubai";
+          break;
+        case 3: 
+          tujuan = "Peru";
+          break;
+        case 4: 
+          tujuan = "Roma";
+          break;
+        case 5: 
+          tujuan = "Buenos Aires";
+          break;
+        default: System.out.println("Tidak ada opsi");
+        return;       
+    }
+    
+    System.out.println("");
+    System.out.println("Pilih kendaraan anda: ");
+    System.out.println("1. Private Jet");
+    System.out.println("2. Commercial Aircraft");
+    System.out.println("3. Yatch");
+    System.out.println("4. Luxury Car(cargo)");
+    System.out.println("5. Cruise Ship");  
+    System.out.print("Pilihan anda (1/2/3/4/5): ");
+    int vehicleinput = scanner.nextInt();
+    String vehicle = ("");
+    int harga = 0;
+    
+    switch (vehicleinput) {
+        case 1: 
+          vehicle = ("Private Jet");
+          harga = getHarga(tujuan, vehicle);
+          break;
+        case 2: 
+          vehicle = ("Commercial Aircraft");
+          harga = getHarga(tujuan, vehicle);
+          break;
+        case 3: 
+          vehicle = ("Yatch");
+          harga = getHarga(tujuan, vehicle);
+          break;
+        case 4: 
+          vehicle = ("Luxury Car(cargo)");
+          harga = getHarga(tujuan, vehicle);
+          break;
+        case 5: 
+          vehicle = ("Cruise Ship");
+          harga = getHarga(tujuan, vehicle);
+          break;
+        default: 
+            System.out.println("Tidak ada opsi");
+            return;
+      }
+
+      System.out.println("");
+      System.out.println("------------------------------------HASIL---------------------------------------");
+      System.out.println("Anda telah memilih tujuan untuk pergi ke " + tujuan + " dengan menggunakan " + vehicle + ".");
+      System.out.println("Estimasi biaya: " + harga);
+      scanner.close();
+      System.out.println("................................................................................");
+      System.out.println("");
+    }
+
+  public static int getHarga(String tujuan, String vehicle) {
+    int harga = 0;
+
+    switch (tujuan) {
+      case "Maladewa":
+        switch (vehicle) {
+          case "Private Jet": harga = 300000000; break;
+          case "Commercial Aircraft": harga = 25000000; break;
+          case "Yatch": harga = 155000000; break;
+          case "Luxury Car(cargo)": harga = 66500000; break;
+          case "Cruise Ship": harga = 720000000; break;
+          default: 
+              System.out.println("Kendaraan tidak valid untuk tujuan ini");
+        }
+        break;
+      case "Dubai":
+        switch (vehicle) {
+          case "Private Jet": harga = 450000000; break;
+          case "Commercial Aircraft": harga = 40000000; break;
+          case "Yatch": harga = 700000000; break;
+          case "Luxury Car(cargo)": harga = 150000000; break;
+          case "Cruise Ship": harga = 845000000; break;
+          default: 
+              System.out.println("Kendaraan tidak valid untuk tujuan ini");
+        }
+        break;
+      case "Peru":
+        switch (vehicle) {
+          case "Private Jet": harga = 870000000; break;
+          case "Commercial Aircraft": harga = 90000000; break;
+          case "Yatch": harga = 180000000; break;
+          case "Luxury Car(cargo)": harga = 290000000; break;
+          case "Cruise Ship": harga = 980000000; break;
+          default: 
+              System.out.println("Kendaraan tidak valid untuk tujuan ini");
+        }
+        break;
+      case "Roma":
+        switch (vehicle) {
+          case "Private Jet": harga = 500000000; break;
+          case "Commercial Aircraft": harga = 35000000; break;
+          case "Yatch": harga = 200000000; break;
+          case "Luxury Car(cargo)": harga = 120000000; break;
+          case "Cruise Ship": harga = 900000000; break;
+          default: 
+              System.out.println("Kendaraan tidak valid untuk tujuan ini");
+        }
+        break;
+      case "Buenos Aires":
+        switch (vehicle) {
+          case "Private Jet": harga = 600000000; break;
+          case "Commercial Aircraft": harga = 45000000; break;
+          case "Yatch": harga = 250000000; break;
+          case "Luxury Car(cargo)": harga = 130000000; break;
+          case "Cruise Ship": harga = 950000000; break;
+          default: 
+              System.out.println("Kendaraan tidak valid untuk tujuan ini");
+    }
+    break;
+  default: System.out.println("Tujuan tidak valid.");
+    }
+
+    return harga;
+  }
+}
+
